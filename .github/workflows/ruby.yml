@@ -1,0 +1,173 @@
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+# This workflow will download a prebuilt Ruby version, install dependencies and run tests with Rake
+# For more information see: https://github.com/marketplace/actions/setup-ruby-jruby-and-truffleruby
+
+name: Ruby
+Syncing repository: MSGLion/github-slideshow
+
+12Getting Git version info
+
+16Deleting the contents of '/home/runner/work/github-slideshow/github-slideshow'
+
+17Initializing the repository
+
+21Disabling automatic garbage collection
+
+23Setting up auth
+
+29Fetching the repository
+
+358Determining the checkout info
+
+359Checking out the ref
+
+379/usr/bin/git log -1
+
+380commit 53b34865ab24619f2c6b3224a12f8820e16e4020
+
+381Author: MSGLion <69359624+MSGLion@users.noreply.github.com>
+
+382Date:   Fri Aug 7 18:16:42 2020 +0000
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  job_id:
+    version: '2.272.0'
+
+2Operating System
+
+6Virtual Environment
+
+10Prepare workflow directory
+
+11Prepare all required actions
+
+12Download action repository 'actions/checkout@v2'
+
+13
+Download action repository 'ruby/setup-ruby@ec106b438a1ff6ff109590de34ddc62c540232e0' 
+  test: ' https://xoso.com.vn/xo-so-mien-nam
+    runs-on: ubuntu-latest
+  version: '2.272.0'
+
+2Operating System
+
+6Virtual Environment
+
+10Prepare workflow directory
+
+11Prepare all required actions
+
+12Download action repository 'actions/checkout@v2'
+
+13
+Download action repository 'ruby/setup-ruby@ec106b438a1ff6ff109590de34ddc62c540232e0'  
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Ruby
+    # To automatically get bug fixes and new Ruby versions for ruby/setup-ruby,
+    # change this to (see https://github.com/ruby/setup-ruby#versioning):
+    # uses: ruby/setup-ruby@v1
+      uses: ruby/setup-ruby@ec106b438a1ff6ff109590de34ddc62c540232e0
+      with:
+        ruby-version: 2.6
+        key:  /usr/bin/git version
+
+3git version 2.28.0
+
+4/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+
+5/usr/bin/git submodule foreach --recursive git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :
+
+6/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+
+7http.https://github.com/.extraheader
+
+8/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+
+9/usr/bin/git submodule foreach --recursive git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :
+    - name: Install dependencies
+Run bundle install
+
+6The dependency tzinfo-data (>= 0) will be unused by any of the platforms Bundler is installing for. Bundler is installing for ruby but the dependency is only for x86-mingw32, x86-mswin32, x64-mingw32. To add those platforms to the bundle, run `bundle lock --add-platform x86-mingw32 x86-mswin32 x64-mingw32`.
+
+7Fetching gem metadata from https://rubygems.org/.........
+
+8Fetching concurrent-ruby 1.1.5
+
+9Installing concurrent-ruby 1.1.5
+
+10Fetching i18n 0.9.5
+
+11Installing i18n 0.9.5
+
+12Fetching minitest 5.13.0
+
+13Installing minitest 5.13.0
+
+14Fetching thread_safe 0.3.6
+
+15Installing thread_safe 0.3.6
+
+16Fetching tzinfo 1.2.5
+
+17Installing tzinfo 1.2.5
+
+18Fetching activesupport 4.2.11.1
+
+19Installing activesupport 4.2.11.1
+
+20Fetching public_suffix 3.1.1
+
+21Installing public_suffix 3.1.1
+
+22Fetching addressable 2.7.0
+
+23Installing addressable 2.7.0
+
+24Using bundler 1.17.3
+
+25Fetching coffee-script-source 1.11.1
+
+26Installing coffee-script-source 1.11.1
+
+27Fetching execjs 2.7.0
+
+28Installing execjs 2.7.0
+
+29Fetching coffee-script 2.4.1
+
+  Run tests1s
+  Post Run actions/checkout@v20s
+9/usr/bin/git submodule foreach --recursive git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :
+
+1Post job cleanup.
+2/usr/bin/git version
+
+3git version 2.28.0
+
+4/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+
+5/usr/bin/git submodule foreach --recursive git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :
+
+6/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+
+7http.https://github.com/.extraheader
+
+8/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+
+9/usr/bin/git submodule foreach --recursive git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :
+
+  Complete job0s
+      
+      run: bundle install
+    - name: Run tests
+      run: bundle exec rake
